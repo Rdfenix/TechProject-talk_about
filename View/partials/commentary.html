@@ -1,0 +1,29 @@
+<div id="post-form" class="container margin-bottom">
+	<div class="pull-left left-arrow">
+		<a href="#!/"><i class="glyphicon glyphicon-arrow-left"></i><span class="back">Back</span></a>
+	</div>
+	<div class="row">
+		<div class="your-post margin-bottom">
+			<h2 ng-bind="cmtCtrl.posting.title"></h2>
+		</div>
+		<form action="" class="padding-bottom">
+			<div class="form-group">
+				<input type="text" name="commentary" class="form-title" placeholder="COMMENTARY">
+			</div>
+			<button type="submit" class="btn btn-success send text-uppercase">send</button>
+		</form>
+	</div>
+	<div class="row">
+		<div ng-repeat="comment in cmtCtrl.comment">
+			<div class="card">
+				<div class="card-header"></div>
+				<div class="card-block">
+					<blockquote class="card-blockquote">
+						<p>{{comment.commentary}}</p>
+						<footer>{{comment.name}} - <cite title="Source Title">{{comment.created_at}}</cite></footer>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

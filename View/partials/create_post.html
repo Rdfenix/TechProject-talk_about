@@ -1,0 +1,19 @@
+<div id="post-form" class="container">
+	<div class="pull-left left-arrow">
+		<a href="#!/"><i class="glyphicon glyphicon-arrow-left"></i><span class="back">Back</span></a>
+	</div>
+	<div class="row">
+		<div class="your-post">
+			<h2>What do you want to talk about?</h2>
+		</div>
+		<form ng-submit="pstCtrl.sendPost()" name="postForm">
+			<div class="form-group">
+				<input type="text" name="title" class="form-title" placeholder="TITLE" ng-model="pstCtrl.post.title">
+			</div>
+			<div class="form-group">
+				<textarea name="post" cols="30" rows="10" class="form-control" placeholder="POST" ng-model="pstCtrl.post.post"></textarea>
+			</div>
+			<button type="submit" class="btn btn-success send text-uppercase">send</button>
+		</form>
+	</div>
+</div>

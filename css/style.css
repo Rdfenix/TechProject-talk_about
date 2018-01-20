@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+header.header-black {
+	background: #000;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+header.header-black nav ul li {
+	margin-right: 14px;
+}
+header.header-black nav ul li:last-child {
+	margin-right: 0;
+}
+header.header-black nav ul li a {
+	font-family: 'Varela Round', sans-serif;
+	color: #FFF;
+	text-decoration: none;
+}
+header h1 {
+	font-family: 'Pacifico', cursive;
+	color:#FFF;
+	font-size: 2em;
+	position: relative;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+#posts {
+	position: relative;
+	top: 100px;
+}
+#post-form {
+	position: relative;
+	top: 100px;
+}
+#posts ul li a {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+	font-size: 1.28em;
+	font-family: 'Varela Round', sans-serif;
+}
+.top {
+	margin-top: 35px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: 5px 0 15px 0;
+}
+.card-header {
+	background: #555;
+	padding: 11px;
+	color: #FFF;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+.card-body {
+	padding: 15px;
+}
+.form-title {
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: rgba(0, 0, 0, 0.2);
+	width: 100%;
+}
+#post-form form input::placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#post-form form input {
+	font-family: 'Varela Round', sans-serif;
+	font-size: 1.6em;
+	color: #000;
+}
+#post-form form textarea {
+	font-family: 'Varela Round', sans-serif;
+	font-size: 1.6em;
+	color: #000;
+}
+#post-form form textarea::placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#post-form form .form-group:first-child {
+    margin-bottom: 23px;
+}
+.your-post {
+	margin-bottom: 30px;
+	margin-top: 29px;
+}
+.your-post h2 {
+	font-family: 'Varela Round', sans-serif;
+}
+.send {
+	width: 29%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.4em;
+}
+.glyphicon-arrow-left:before {
+    font-size: 2.0em;
+}
+.left-arrow {
+	margin-left: -72px;
+	margin-top: -20px;
+}
+.left-arrow a {
+	text-decoration: none;
+	color: #000;
+}
+.left-arrow .back {
+	position: absolute;
+    top: -18px;
+    left: -25px;
+    font-size: 1.4em;
+    font-style: italic;
+}
+.card-footer {
+	padding: 13px;
+}
+.margin-bottom {
+	margin-bottom: 50px;
+}
+.padding-bottom {
+	padding-bottom: 40px;
+}
+#register {
+	position: relative;
+    top: 100px;
+}
+#register .form-register {
+	position: relative;
+    top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#register form input::placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#register form .form-group {
+    margin-bottom: 50px;
+}
+#register form input {
+	font-family: 'Varela Round', sans-serif;
+	font-size: 1.6em;
+	color: #000;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.your-register {
+    margin-bottom: 54px;
+}
