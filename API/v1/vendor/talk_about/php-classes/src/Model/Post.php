@@ -7,7 +7,7 @@
 
 	class Post extends Model
 	{
-		protected $fields = ["id", "title", "post", "user_id"];
+		protected $fields = ["id", "title", "post", "user_id", "commentary", "post_id"];
 
 		public function savePost()
 		{

@@ -4,6 +4,7 @@
 
     use \Slim\Slim;
     use \Talk\Model\Post;
+    use \Talk\Model\User;
 
     $app = new Slim();
     $app->config('debug', true);
@@ -36,6 +37,12 @@
         $post->setData($result);
         $teste = $post->savePost();
         echo $teste;
+    });
+
+    $app->post('/user/create', function(){
+        $request = Slim::getInstance()->request();
+        $result =  json_decode($request->getBody());
+        echo json_encode($result);
     });
 
     $app->run();

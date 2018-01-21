@@ -6,15 +6,15 @@
         <div class="your-post your-register">
             <h2>Register Your Account</h2>
         </div>
-        <form>
+        <form ng-submit="register.createUser()">
             <div class="form-group">
-                <input type="text" class="form-title" name="name" placeholder="NAME">
+                <input type="text" class="form-title" name="name" placeholder="NAME" ng-model="register.user.name">
             </div>
             <div class="form-group">
-                <input type="password" class="form-title" name="password" placeholder="PASSWORD">
+                <input type="text" class="form-title" name="name" placeholder="USER" ng-model="register.user.user">
             </div>
             <div class="form-group">
-                <input type="password" class="form-title" placeholder="CONFIRM PASSWORD">
+                <input type="password" class="form-title" name="password" placeholder="PASSWORD" ng-model="register.user.password">
             </div>
             <button type="submit" class="btn btn-primary send text-uppercase">register</button>
         </form>

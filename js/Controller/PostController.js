@@ -1,4 +1,4 @@
-angular.module('appPost').controller('PostCtrl', ['$location', 'PostService', function ($location, PostService) {
+angular.module('appPost').controller('PostController', ['$location', 'PostService', function ($location, PostService) {
 
 	var self = this;
 	self.post = {title: '', post: ''};
@@ -19,12 +19,11 @@ angular.module('appPost').controller('PostCtrl', ['$location', 'PostService', fu
 
 	PostService.getPosts().then(function(response){
 		if (response.status == 200) {
-			console.log(response.data);
 			self.posts = response.data;
 		}
 	});
 
-}]).controller('CommentaryCtrl', ['$location', '$routeParams','PostService', function ($location, $routeParams, PostService) {
+}]).controller('CommentaryController', ['$location', '$routeParams','PostService', function ($location, $routeParams, PostService) {
 
 	var self = this;
 
@@ -42,4 +41,14 @@ angular.module('appPost').controller('PostCtrl', ['$location', 'PostService', fu
 		}
 		
 	});
-}])
+}]).controller('RegisterController', ['PostService', function(PostService){
+	
+	var self = this;
+	self.user = {name: '', user:'', password: ''};
+
+	self.createUser = function(){
+		PostService.createUser(self.user).then(function(response){
+			console.log(response);
+		});
+	}
+}]);

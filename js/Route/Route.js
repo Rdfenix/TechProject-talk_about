@@ -5,14 +5,15 @@ angular.module('appPost', ['ngRoute']).config(function($routeProvider){
 	})
 	.when('/post/create', {
 		templateUrl: 'View/partials/create_post.html',
-		controller: 'PostCtrl as pstCtrl'
+		controller: 'PostController as pstCtrl'
 	})
 	.when('/commentary/:id', {
 		templateUrl: 'View/partials/commentary.html',
-		controller: 'CommentaryCtrl as cmtCtrl'
+		controller: 'CommentaryController as cmtCtrl'
 	})
 	.when('/register', {
-		templateUrl: 'View/partials/register.html'
+		templateUrl: 'View/partials/register.html',
+		controller: 'RegisterController as register'
 	});
 	
 	$routeProvider.otherwise({ redirectTo: '/' });
