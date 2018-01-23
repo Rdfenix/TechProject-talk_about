@@ -1,0 +1,19 @@
+<div id="register" class="container">
+    <div class="pull-left left-arrow">
+        <a href="#!/"><i class="glyphicon glyphicon-arrow-left"></i><span class="back">Back</span></a>
+    </div>
+    <div class="row form-register">
+        <div class="your-post your-register">
+            <h2>Access Your Account</h2>
+        </div>
+        <form ng-submit="loginCtrl.loginUser()">
+            <div class="form-group">
+                <input type="text" class="form-title" name="name" placeholder="USER" ng-model="loginCtrl.user.user">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-title" name="pass" placeholder="PASSWORD" ng-model="loginCtrl.user.pass">
+            </div>
+            <button type="submit" class="btn btn-primary send text-uppercase">Log In</button>
+        </form>
+    </div>
+</div>

@@ -160,3 +160,16 @@ header h1 {
 .your-register {
     margin-bottom: 54px;
 }
+#ModalConfirm .modal-header {
+	background: #4a4a4a;
+	color: #FFF;
+	padding-bottom: 28px;
+}
+#ModalConfirm .modal-title {
+	font-size: 25px;
+	width: auto;
+	position: absolute;
+}
+#ModalConfirm .modal-body {
+	font-size: 25px;
+}

@@ -4,7 +4,7 @@ angular.module('appPost').controller('PostController', ['$location', 'PostServic
 	self.post = {title: '', post: ''};
 
 	self.sendPost = function() {
-		PostService.talk(self.post).then(function(response){
+		PostService.postItem("/post/create", self.post).then(function(response){
 			if(response.data.status == 200){
 				$location.path('/');
 				self.post = {title: '', post: ''};
@@ -16,10 +16,12 @@ angular.module('appPost').controller('PostController', ['$location', 'PostServic
 	
 	var self = this;
 	self.posts = [];
+	self.user_id = '';
 
 	PostService.getPosts().then(function(response){
 		if (response.status == 200) {
 			self.posts = response.data;
+			self.user_id = localStorage.getItem("user_id");
 		}
 	});
 
@@ -28,27 +30,34 @@ angular.module('appPost').controller('PostController', ['$location', 'PostServic
 	var self = this;
 
 	self.posting = [];
-	PostService.getPostDetail($routeParams.id).then(function(response){
+	PostService.getItemDetail("/post", $routeParams.id).then(function(response){
 		if(response.data.status != 500){
 			self.posting = response.data;
 		}
 	});
 
 	self.comment = [];
-	PostService.getCommentary($routeParams.id).then(function(response){
-		if(response.data.status != 500){
-			self.comment = response.data;
-		}
-		
-	});
-}]).controller('RegisterController', ['PostService', function(PostService){
-	
-	var self = this;
-	self.user = {name: '', user:'', password: ''};
+	var LoadCommentray = function() {
+		PostService.getItemDetail("/commentary/list", $routeParams.id).then(function(response){
+			if(response.data.status != 500){
+				self.comment = response.data;
+			}
+			
+		});
+	};
+	LoadCommentray();
 
-	self.createUser = function(){
-		PostService.createUser(self.user).then(function(response){
-			console.log(response);
+	self.commentary = '';
+	var data = {commentary: self.commentary, id: $routeParams.id, user_id: localStorage.getItem("user_id")};
+
+	self.postCommentary = function(){
+		console.log(data);
+		PostService.postItem('/commentary', data).then(function(response){
+			if (response.data.status === 200) {
+				LoadCommentray();
+			}
 		});
 	}
+
+
 }]);

@@ -1,14 +1,8 @@
 angular.module('appPost').factory('PostService', ['$http', function ($http) {
-	return {
 
-		talk: function(data) {
-			return $http.post('API/v1/post/create', data).then(function(response){
-				return response;
-			});
-		},
-
-		createUser: function(data){
-			return $http.post('API/v1/user/create', data).then(function(response){
+	var service = {
+		postItem: function(q, data) {
+			return $http.post('API/v1' + q, data).then(function(response){
 				return response;
 			});
 		},
@@ -16,14 +10,16 @@ angular.module('appPost').factory('PostService', ['$http', function ($http) {
 		getPosts: function() {
 			return $http.get('API/v1/post/list');
 		},
-		
-		getPostDetail: function(code){
-			return $http.get('API/v1/post/' + code);
+
+		getItemDetail: function(q, code){
+			return $http.get('API/v1' + q + '/' + code);
 		},
 
-		getCommentary: function(code){
-			return $http.get('API/v1/commentary/list/' + code);
+		getSession: function() {
+			return $http.get('API/v1/user/session');
 		}
+	};
 
-	}
+	return service;
+		
 }])

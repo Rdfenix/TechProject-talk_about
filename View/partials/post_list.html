@@ -20,7 +20,7 @@
 						  <div class="card-footer">
 						  	<ul class="list-inline">
 						  		<li><a href="#!/commentary/{{item.id}}">comment</a></li>
-						  		<li><a href="#">delete</a></li>
+						  		<li  ng-show="([item.user_id] | filter: listPost.user_id).length"><a href="#" >delete</a></li>
 						  	</ul>
 						  </div>
 						</div>

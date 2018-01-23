@@ -8,7 +8,7 @@
 	<title>Talk About !</title>
 </head>
 <body>
-	<header class="header-black">
+	<header class="header-black" ng-controller="HeaderController as headerCtrl">
 		<div class="container">
 			<div class="pull-left">
 				<h1>Talk About !</h1>
@@ -16,9 +16,10 @@
 			<div class="pull-right">
 				<nav>
 					<ul class="list-inline">
-						<li><input type="search" name="search" id=""></li>
-						<li class="text-uppercase"><a href="#">Login</a></li>
-						<li class="text-uppercase"><a href="#!/register">register</a></li>
+						<li class="text-uppercase" ng-hide="headerCtrl.isLoggedIn"><a href="#!/login">Login</a></li>
+						<li class="text-uppercase" ng-show="headerCtrl.isLoggedIn"><a href="#!/">{{headerCtrl.name}}</a></li>
+						<li class="text-uppercase" ng-hide="headerCtrl.isLoggedIn"><a href="#!/register">register</a></li>
+						<li class="text-uppercase" ng-show="headerCtrl.isLoggedIn"><a href="#!/register">Log Out</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -27,10 +28,32 @@
 	<section>
 		<ng-view></ng-view>
 	</section>
+	<!-- Modal -->
+	<div class="modal fade" id="ModalConfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">INFORMATION</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        You must log in to continue
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script src="vendor/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="vendor/node_modules/angular/angular.min.js"></script>
 	<script src="vendor/node_modules/angular-route/angular-route.min.js"></script>
 	<script src="js/Route/Route.js"></script>
 	<script src="js/Model/PostModel.js"></script>
 	<script src="js/Controller/PostController.js"></script>
+	<script src="js/Controller/UserController.js"></script>
 </body>
 </html>

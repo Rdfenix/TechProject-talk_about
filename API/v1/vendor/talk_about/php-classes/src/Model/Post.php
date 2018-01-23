@@ -64,6 +64,26 @@
 				return json_encode($result);
 			}
 		}
+
+		public function saveCommentary()
+		{
+			$sql = new Sql();
+			$result = $sql->select("CALL reply_save(:COMMENTARY, :POST_ID, :USER_ID)", array(
+				":POST_ID"=>$this->getpost_id(),
+				":COMMENTARY"=>$this->commentary(),
+				":USER_ID"=>$_SESSION[User::SESSION]['id']
+			));
+
+			if (count($result) > 0) {
+				return array(
+					"status"=>200
+				);
+			} else {
+				return array(
+					"status"=>500);
+			}
+
+		}
 	}
 
 ?>
