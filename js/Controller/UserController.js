@@ -42,5 +42,13 @@ angular.module('appPost').controller('RegisterController', ['$location', 'PostSe
 		self.name = localStorage.getItem("user_name");
 	}, function(err){
 		console.log(err);
-	});	
+	});
+
+	self.logout = function() {
+		PostService.logout().then(function(response){
+			console.log(response);
+		});
+	}
+
+
 }]);

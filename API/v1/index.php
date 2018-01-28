@@ -65,6 +65,12 @@
         echo json_encode($result);
     });
 
+    $app->get('/user/logout', function(){
+        echo  json_encode(array(
+            "status"=>"feito"
+        ));
+    });
+
     $app->post('/query', function(){
         $search = new Search();
         $request = Slim::getInstance()->request();
@@ -77,10 +83,9 @@
         $post = new Post();
         $request = Slim::getInstance()->request();
         $result =  json_decode($request->getBody());
-        $user->setData($result);
-        $data = $user->saveCommentary();
+        $post->setData($result);
+        $data = $post->saveCommentary();
         echo json_encode($data);
-
     });
 
     $app->run();

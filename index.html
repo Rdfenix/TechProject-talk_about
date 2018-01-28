@@ -15,11 +15,11 @@
 			</div>
 			<div class="pull-right">
 				<nav>
-					<ul class="list-inline">
+					<ul class="list-inline" style="margin-top: 5px;">
 						<li class="text-uppercase" ng-hide="headerCtrl.isLoggedIn"><a href="#!/login">Login</a></li>
 						<li class="text-uppercase" ng-show="headerCtrl.isLoggedIn"><a href="#!/">{{headerCtrl.name}}</a></li>
 						<li class="text-uppercase" ng-hide="headerCtrl.isLoggedIn"><a href="#!/register">register</a></li>
-						<li class="text-uppercase" ng-show="headerCtrl.isLoggedIn"><a href="#!/register">Log Out</a></li>
+						<li class="text-uppercase" ng-show="headerCtrl.isLoggedIn"><a ng-click="headerCtrl.logout()">Log Out</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -54,6 +54,7 @@
 	<script src="js/Route/Route.js"></script>
 	<script src="js/Model/PostModel.js"></script>
 	<script src="js/Controller/PostController.js"></script>
+	<script src="js/Controller/CommentaryController.js"></script>
 	<script src="js/Controller/UserController.js"></script>
 </body>
 </html>

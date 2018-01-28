@@ -6,9 +6,9 @@
 		<div class="your-post margin-bottom">
 			<h2 ng-bind="cmtCtrl.posting.title"></h2>
 		</div>
-		<form action="" class="padding-bottom" ng-submit="cmtCtrl.postCommentary()">
+		<form class="padding-bottom" ng-submit="cmtCtrl.postCommentary()">
 			<div class="form-group">
-				<input type="text" name="commentary" class="form-title" placeholder="COMMENTARY" ng-model="cmtCtrl.commentary">
+				<input type="text" name="commentary" class="form-title" placeholder="COMMENTARY" ng-model="cmtCtrl.comm.commentary">
 			</div>
 			<button type="submit" class="btn btn-success send text-uppercase">send</button>
 		</form>

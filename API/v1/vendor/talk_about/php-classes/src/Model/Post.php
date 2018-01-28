@@ -70,7 +70,7 @@
 			$sql = new Sql();
 			$result = $sql->select("CALL reply_save(:COMMENTARY, :POST_ID, :USER_ID)", array(
 				":POST_ID"=>$this->getpost_id(),
-				":COMMENTARY"=>$this->commentary(),
+				":COMMENTARY"=>$this->getcommentary(),
 				":USER_ID"=>$_SESSION[User::SESSION]['id']
 			));
 
@@ -82,7 +82,6 @@
 				return array(
 					"status"=>500);
 			}
-
 		}
 	}
 

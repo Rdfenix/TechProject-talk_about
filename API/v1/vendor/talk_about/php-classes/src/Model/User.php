@@ -49,7 +49,7 @@
 
 		public function session()
 		{
-			return $_SESSION[User::SESSION];
+			return $_SESSION[User::SESSION]['id'];
 		}
 		
 		public function saveUser()

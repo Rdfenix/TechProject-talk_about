@@ -17,6 +17,12 @@ angular.module('appPost').factory('PostService', ['$http', function ($http) {
 
 		getSession: function() {
 			return $http.get('API/v1/user/session');
+		},
+
+		logout: function(){
+			return $http.get('API/v1/user/logout').then(function(response){
+				return response;
+			})
 		}
 	};
 
